@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.lang.String;
@@ -69,5 +70,25 @@ public class Functions {
     }
     public static boolean isIntCorrect(int intForCheck, int param) {
         return intForCheck <= param && intForCheck >= 0;
+    }
+
+    public static List<Product> SortProductList(List<Product> productList, ParamForSearch param) {
+        List<Product> sortedList = new ArrayList<>();
+        for (Product product : productList) {
+            if (product.GetPrice() >= param.getMinPrice() && product.GetPrice() <= param.getMaxPrice() && product.GetRating() >= param.getMinRating()) sortedList.add(product);
+
+        }
+        return sortedList;
+    }
+    public static void printProductList(List<Product> productList) {
+        String rate;
+        for (int i = 0; i < productList.size(); i++) {
+            if (productList.get(i).GetRating() == 0) {
+                rate = "-";
+            } else rate = String.valueOf(productList.get(i).GetRating());
+            System.out.println(i+1 +". " + productList.get(i).GetName() + " ( " + rate + " / 5.0 )");
+            System.out.println("Цена: " + productList.get(i).GetPrice() + " руб.");
+            System.out.println("------------------------");
+        }
     }
 }

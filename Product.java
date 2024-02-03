@@ -12,7 +12,7 @@ public class Product {
     List<Review> reviews = new ArrayList<>();
     //Seller seller;
 
-    public Product(String name, int  price, String description, float rating) {
+    public Product(String name, int  price, String description) {
         this.name = name;
         this.price = price;
         this.description = description;
