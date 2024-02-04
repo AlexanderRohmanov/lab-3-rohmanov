@@ -79,4 +79,7 @@ public class Product {
     public void ratingEdit(int rating) {
         this.rating = Functions.calculateRating(this, rating);
     }
+    public void addReview(Review review) {
+        reviews.add(review);
+    }
 }

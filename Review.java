@@ -51,10 +51,13 @@ public class Review {
         System.out.println("--- Составление отзыва ---");
         inputGrade();
         inputText();
+        product.ratingEdit(grade);
+        product.addReview(this);
+        customer.addReview(this);
         this.product = product;
         this.customer = customer;
-        customer.addReview(this);
-        product.ratingEdit(grade);
+
+
 
     }
     public void printReview() {

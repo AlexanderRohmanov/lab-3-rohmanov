@@ -30,12 +30,14 @@ public class Main {
 
         //      СОРТИРОВКА СПИСКА
         List<Product> productList = new ArrayList<>();
-        Review review = new Review();
+        Review review1 = new Review();
+        Review review2 = new Review();
         Product productONE = new Product("RTX 3060", 30000, "Видеокарта способная обеспечить необходимый уровень производительностти...");
         Product productTWO = new Product("RTX 3090", 50000, "Видеокарта способная обеспечить больше чем необходимый уровень производительностти...");
         productList.add(productONE);
         productList.add(productTWO);
-        review.createReview(productONE, customerONE);
+        review1.createReview(productONE, customerONE);
+        review2.createReview(productONE, customerTWO);
         Functions.printProductList(productList);
 
         System.out.println("--- Отсортированный список ---");
