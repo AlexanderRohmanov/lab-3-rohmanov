@@ -3,10 +3,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Customer customerONE = new Customer("AlexCustomer", "12345", "alex@mail.ru");
-        List<Customer> customerList = new ArrayList<>();
-        customerList.add(customerONE);
-        Customer customerTWO = new Customer();
+
         //customerTWO.registration(customerList);
         //customerTWO.printCustomerInform();
 
@@ -47,19 +44,55 @@ public class Main {
         //Functions.printProductList(Functions.SortProductList(productList, param));
 
         //               СОЗДАНИЕ АККАУНТА ПРОДАВЦА И ДОБАВЛЕНИЕ ТОВАРОВ
-        List<Seller> sellerList = new ArrayList<>();
-        List<Product> poductList = new ArrayList<>();
-        Seller sellerONE = new Seller();
-        sellerONE.registration(sellerList);
+        //List<Seller> sellerList = new ArrayList<>();
+        //List<Product> poductList = new ArrayList<>();
+        //Seller sellerONE = new Seller();
+        //sellerONE.registration(sellerList);
+        //
+        //sellerONE.printSellerInform();
+        //
+        //Product productONE = new Product();
+        //productONE.creatNewProduct(poductList, sellerONE);
+        //
+        //sellerONE.printSellerInform();
+        //
+        //sellerONE.printProductOnSaleList();
 
-        sellerONE.printSellerInform();
+        //              СОСТАВЛЕНИЕ ОТЗЫВА ДЛЯ ТОВАРА
+        //List<Seller> sellerList = new ArrayList<>();
+        //List<Product> poductList = new ArrayList<>();
+        //Customer customer = new Customer("Nikolay100");
+        //Seller sellerONE = new Seller("sashaSeller", "sashaseller@mail.ru" , "12345");
+        //Product productONE = new Product("ONEPLUS NORD 3 CE LITE", 20000, "Телефон среднец ценовой категории", sellerONE);
+        //sellerONE.addProduct(productONE);
+        //
+        //Review reviewONE = new Review();
+        //
+        //System.out.println("        ИНФОРМАЦИЯ О ТОВАРЕ ДО ДОБАЛВЕНИЯ ОТЗЫВА");
+        //productONE.printProductInform();
+        //System.out.println(" ");
+        //
+        //reviewONE.createReview(productONE, customer);
+        //System.out.println("        ИНФОРМАЦИЯ О ТОВАРЕ ПОСЛЕ ДОБАЛВЕНИЯ ОТЗЫВА");
+        //productONE.printProductInform();
 
-        Product productONE = new Product();
-        productONE.creatNewProduct(poductList, sellerONE);
+        //      СОЗДАНИЕ НОВОГО АККАУНТА ПОКУПАТЕЛЯ
 
-        sellerONE.printSellerInform();
+        Customer customerONE = new Customer("AlexCustomer", "12345", "alex@mail.ru");
+        Seller sellerONE = new Seller("sashaSeller", "sashaseller@mail.ru" , "12345");
+        List<Customer> customerList = new ArrayList<>();
+        customerList.add(customerONE);
+        Customer customerTWO = new Customer();
+        customerTWO.registration(customerList);
+        System.out.println(" ");
+        customerTWO.printCustomerInform();
+        System.out.println(" ");
 
-        sellerONE.printProductOnSaleList();
+        Product productONE = new Product("RTX 3060", 30000, "Видеокарта способная обеспечить необходимый уровень производительностти..." , sellerONE);
+        Review review = new Review();
+        review.createReview(productONE, customerTWO);
 
+        customerTWO.printCustomerInform();
+        customerTWO.printReviewsInform();
     }
 }

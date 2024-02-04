@@ -18,6 +18,14 @@ public class Product {
         this.description = description;
         this.rating = rating;
     }
+    public Product(String name, int  price, String description, Seller seller) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.rating = rating;
+        this.seller = seller;
+    }
+
 
     public Product(String name) {
         this.name = name;
@@ -47,7 +55,7 @@ public class Product {
 
     public void inputName() {
         System.out.print("Введите название товара: ");
-        name = Functions.scanner().next();
+        name = Functions.scanner().nextLine();
     }
     public void inputPrice() {
         System.out.print("Введите цену: ");
@@ -74,7 +82,7 @@ public class Product {
         System.out.println("Цена: " + price);
         System.out.println("Описание товара: " + description);
         if (rating != 0) {
-            System.out.println("Рейтинг: " + rating + "/ 5.0");
+            System.out.println("Рейтинг: " + rating + "/ 5.0 (на основе " + reviews.size() + " отзыва/ов )");
         }
         else System.out.println("Рейтинг: - / 5");
     }
