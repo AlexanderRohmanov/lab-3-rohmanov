@@ -48,12 +48,13 @@ public class Review {
     }
 
     public void createReview(Product product, Customer customer) {
-        System.out.println("--- Составление отзыва ---");
+        System.out.println("--- Составление отзыва для \"" + product.GetName() +"\" ---");
         inputGrade();
         inputText();
         product.ratingEdit(grade);
         product.addReview(this);
         customer.addReview(this);
+        product.GetSeller().ratingEdit(grade);
         this.product = product;
         this.customer = customer;
 

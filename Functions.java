@@ -18,6 +18,16 @@ public class Functions {
         }
         return false;
     }
+    public static boolean isSellerExist(List<Seller> sellersList, String name, String mail) {
+
+        for (Seller seller : sellersList) {
+            if (seller.getName().equals(name) && seller.getMail().equals(mail)) {
+                System.out.println("Продавец с такими данными уже зарегистрирован!");
+                return true;
+            }
+        }
+        return false;
+    }
     public static boolean isMailExist(List<Customer> customerList, String mail) {
 
         for (Customer customer : customerList) {
@@ -90,5 +100,16 @@ public class Functions {
             System.out.println("Цена: " + productList.get(i).GetPrice() + " руб.");
             System.out.println("------------------------");
         }
+    }
+    public static float calculateSellerRating(Seller seller, int grade) {
+        float countOfGrade = 0, sumOfGrade = grade;
+        for (Product product : seller.getProductOnSaleList()) {
+            sumOfGrade+= product.GetRating();
+            countOfGrade++;
+        }
+        if (sumOfGrade != 0) {
+            return  (float)sumOfGrade /(countOfGrade+1);
+        }
+        else return 0;
     }
 }

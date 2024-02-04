@@ -9,8 +9,8 @@ public class Product {
     private String description;
     private int id;
     private float rating = 0;
-    List<Review> reviews = new ArrayList<>();
-    //Seller seller;
+    private List<Review> reviews = new ArrayList<>();
+    private Seller seller;
 
     public Product(String name, int  price, String description) {
         this.name = name;
@@ -43,6 +43,7 @@ public class Product {
     }
 
     public List<Review> GetReviews() {return reviews;}
+    public Seller GetSeller() {return seller;}
 
     public void inputName() {
         System.out.print("Введите название товара: ");
@@ -57,11 +58,13 @@ public class Product {
         description = Functions.scanner().nextLine();
     }
 
-    public void creatNewProduct(List<Product> productList) {
+    public void creatNewProduct(List<Product> productList, Seller seller) {
         System.out.println("--- Добавление нового товара ---");
         inputName();
         inputPrice();
         inputDescription();
+        this.seller = seller;
+        seller.addProduct(this);
         System.out.println("Товар \"" + name + "\" успешно добавлен!");
     }
 

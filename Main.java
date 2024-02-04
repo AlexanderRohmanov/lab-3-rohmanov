@@ -28,20 +28,38 @@ public class Main {
         //customerONE.printReviewsInform();
         //productONE.printProductInform();
 
-        //      СОРТИРОВКА СПИСКА
-        List<Product> productList = new ArrayList<>();
-        Review review1 = new Review();
-        Review review2 = new Review();
-        Product productONE = new Product("RTX 3060", 30000, "Видеокарта способная обеспечить необходимый уровень производительностти...");
-        Product productTWO = new Product("RTX 3090", 50000, "Видеокарта способная обеспечить больше чем необходимый уровень производительностти...");
-        productList.add(productONE);
-        productList.add(productTWO);
-        review1.createReview(productONE, customerONE);
-        review2.createReview(productONE, customerTWO);
-        Functions.printProductList(productList);
+        //      СОЗДАНИЕ ОТЗЫВОВ И СОРТИРОВКА СПИСКА ПО ПАРАМЕТРАМ ПОИСКА
+        //List<Product> productList = new ArrayList<>();
+        //Review review1 = new Review();
+        //Review review2 = new Review();
+        //Product productONE = new Product("RTX 3060", 30000, "Видеокарта способная обеспечить необходимый уровень производительностти...");
+        //Product productTWO = new Product("RTX 3090", 50000, "Видеокарта способная обеспечить больше чем необходимый уровень производительностти...");
+        //
+        //productList.add(productONE);
+        //productList.add(productTWO);
+        //
+        //review1.createReview(productONE, customerONE);
+        //review2.createReview(productONE, customerTWO);
+        //Functions.printProductList(productList);
+        //
+        //System.out.println("--- Отсортированный список ---");
+        //ParamForSearch param = new ParamForSearch(20000, 40000, 0,false);
+        //Functions.printProductList(Functions.SortProductList(productList, param));
 
-        System.out.println("--- Отсортированный список ---");
-        ParamForSearch param = new ParamForSearch(20000, 40000, 0,false);
-        Functions.printProductList(Functions.SortProductList(productList, param));
+        //               СОЗДАНИЕ АККАУНТА ПРОДАВЦА И ДОБАВЛЕНИЕ ТОВАРОВ
+        List<Seller> sellerList = new ArrayList<>();
+        List<Product> poductList = new ArrayList<>();
+        Seller sellerONE = new Seller();
+        sellerONE.registration(sellerList);
+
+        sellerONE.printSellerInform();
+
+        Product productONE = new Product();
+        productONE.creatNewProduct(poductList, sellerONE);
+
+        sellerONE.printSellerInform();
+
+        sellerONE.printProductOnSaleList();
+
     }
 }
