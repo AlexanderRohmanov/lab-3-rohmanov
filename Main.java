@@ -80,19 +80,16 @@ public class Main {
 
         Customer customerONE = new Customer("AlexCustomer", "12345", "alex@mail.ru");
         Seller sellerONE = new Seller("sashaSeller", "sashaseller@mail.ru" , "12345");
-        List<Customer> customerList = new ArrayList<>();
-        customerList.add(customerONE);
-        Customer customerTWO = new Customer();
-        customerTWO.registration(customerList);
-        System.out.println(" ");
-        customerTWO.printCustomerInform();
-        System.out.println(" ");
+
+
 
         Product productONE = new Product("RTX 3060", 30000, "Видеокарта способная обеспечить необходимый уровень производительностти..." , sellerONE);
-        Review review = new Review();
-        review.createReview(productONE, customerTWO);
+        System.out.println("ID: " + productONE.GetId());
+        Product productTWO = new Product("RTX 3060 ti", 45000, "Видеокарта способная обеспечить необходимый уровень производительностти..." , sellerONE);
+        System.out.println("ID: " + productTWO.GetId());
+        Product productTHREE = new Product("RTX 3070", 6000, "Видеокарта способная обеспечить необходимый уровень производительностти..." , sellerONE);
+        System.out.println("ID: " + productTHREE.GetId());
 
-        customerTWO.printCustomerInform();
-        customerTWO.printReviewsInform();
+        System.out.println("Кол-во различных товаров в магазине: " + Product.GetCountOfProducts());
     }
 }

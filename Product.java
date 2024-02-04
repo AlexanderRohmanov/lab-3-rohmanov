@@ -7,16 +7,20 @@ public class Product {
     private String name;
     private int price;
     private String description;
-    private int id;
+    private int  id;
     private float rating = 0;
     private List<Review> reviews = new ArrayList<>();
     private Seller seller;
+
+    static int countOfProducts;
 
     public Product(String name, int  price, String description) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.rating = rating;
+        countOfProducts++;
+        id = countOfProducts - 1;
     }
     public Product(String name, int  price, String description, Seller seller) {
         this.name = name;
@@ -24,14 +28,20 @@ public class Product {
         this.description = description;
         this.rating = rating;
         this.seller = seller;
+        countOfProducts++;
+        id = countOfProducts - 1;
     }
 
 
     public Product(String name) {
         this.name = name;
+        countOfProducts++;
+        id = countOfProducts - 1;
     }
 
     public Product() {
+        countOfProducts++;
+        id = countOfProducts - 1;
     }
 
     public String GetName() {
@@ -53,6 +63,9 @@ public class Product {
     public List<Review> GetReviews() {return reviews;}
     public Seller GetSeller() {return seller;}
 
+    public static int GetCountOfProducts() {
+        return countOfProducts;
+    }
     public void inputName() {
         System.out.print("Введите название товара: ");
         name = Functions.scanner().nextLine();
