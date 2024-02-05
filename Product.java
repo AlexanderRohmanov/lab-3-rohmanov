@@ -4,13 +4,13 @@ import java.util.PrimitiveIterator;
 
 public class Product {
 
-    private String name;
-    private int price;
-    private String description;
-    private int  id;
-    private float rating = 0;
-    private List<Review> reviews = new ArrayList<>();
-    private Seller seller;
+    protected String name;
+    protected int price;
+    protected String description;
+    protected int  id;
+    protected float rating = 0;
+    protected List<Review> reviews = new ArrayList<>();
+    protected Seller seller;
 
     static int countOfProducts;
 
