@@ -90,8 +90,11 @@ public class Functions {
         }
         return sortedList;
     }
-    public static void printProductList(List<Product> productList) {
+    public static void printProductList(List<Product> productList) throws Exception{
         String rate;
+        if (productList.size() == 0) {
+            throw new Exception("Список товаров пуст!");
+        }
         for (int i = 0; i < productList.size(); i++) {
             if (productList.get(i).GetRating() == 0) {
                 rate = "-";

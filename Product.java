@@ -30,6 +30,7 @@ public class Product {
         this.seller = seller;
         countOfProducts++;
         id = countOfProducts - 1;
+        seller.addProduct(this);
     }
 
 

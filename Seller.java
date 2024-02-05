@@ -75,8 +75,14 @@ public class Seller {
         this.rating = Functions.calculateSellerRating(this,grade);
     }
 
-    public void printProductOnSaleList() {
+    public void printProductOnSaleList() throws Exception{
         System.out.println("--- Товары от продавца \"" + name + "\" ---");
-        Functions.printProductList(this.productOnSaleList);
+
+        try {
+            Functions.printProductList(this.productOnSaleList);
+        }
+        catch(Exception exception) {
+            System.out.println(exception.getMessage());
+        }
     }
  }
